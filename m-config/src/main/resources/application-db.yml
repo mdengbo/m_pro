@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:mysql://192.168.56.101:3306/test?severTimezone=GMT%2B8
+    username: mysql
+    password: mysql
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+m:
+  plugin:
+    sql:
+      enable: true #是否开启自定义的插件
+    page:
+      enable: true #自定义分页插件

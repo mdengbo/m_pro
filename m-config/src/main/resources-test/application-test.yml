@@ -1,0 +1,8 @@
+#test
+spring:
+  profiles:
+    include: #加载以下结尾的文件
+      - db-test
+      - log
+      - jackson
+      - #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

@@ -1,0 +1,8 @@
+server:
+  port: 8100
+spring:
+  application:
+    name: m-student
+  profiles:
+    #指定配置文件环境信息 dev test pro 同pom 配置一起使用
+    active: '@runtime-profile@'

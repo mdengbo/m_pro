@@ -1,0 +1,7 @@
+#dev
+spring:
+  profiles:
+    include:
+      - db
+      - log
+      - jackson

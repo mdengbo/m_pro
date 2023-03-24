@@ -1,0 +1,3 @@
+#一般配置文件在启动类下时， @Configuration 会被自动扫描,可以在此文件手动指定
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.m.commons.web.config.BaseConfiguration

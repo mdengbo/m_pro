@@ -1,0 +1,6 @@
+#设置基本包扫描路径
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.m.commons.config.BaseConfiguration
+#设置监听器
+org.springframework.context.ApplicationListener=\
+  com.m.commons.log.LogMDCListener
