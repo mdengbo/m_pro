@@ -21,6 +21,10 @@ public class Student extends BaseEntity {
     //主键
     @TableId(type = IdType.AUTO)
     private Long id;
+
+    //班级信息
+    private Long cid;
+
     //姓名
     private String name;
     //年龄

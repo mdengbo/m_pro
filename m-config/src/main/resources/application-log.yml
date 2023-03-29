@@ -4,4 +4,4 @@ logging:
 
 m:
   log4j2:
-    level: warn
+    level: info

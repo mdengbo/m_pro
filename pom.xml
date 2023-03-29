@@ -126,6 +126,24 @@
                 <artifactId>m-data-base</artifactId>
                 <version>${basic.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>org.example</groupId>
+                <artifactId>m-data-entity-class</artifactId>
+                <version>${basic.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.example</groupId>
+                <artifactId>m-data-mapper-class</artifactId>
+                <version>${basic.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.example</groupId>
+                <artifactId>m-business-class-protocol</artifactId>
+                <version>${basic.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -135,12 +153,14 @@
             <id>dev</id>
             <properties>
                 <runtime-profile>dev</runtime-profile>
+                <config-address>192.168.43.86:8848</config-address>
             </properties>
         </profile>
         <profile>
             <id>test</id>
             <properties>
                 <runtime-profile>test</runtime-profile>
+                <config-address>192.168.43.86:8848</config-address>
             </properties>
         </profile>
     </profiles>

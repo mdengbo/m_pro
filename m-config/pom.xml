@@ -26,7 +26,11 @@
 
     <build>
         <resources>
-            <!--指定 需要打包的配置文件信息 若不指定：默认只打包 resources目录下的配置文件-->
+            <!--指定资源文件， 若不指定：默认只打包 resources目录下的配置文件-->
+            <resource>
+                <!--指定后会覆盖 resources 目录下信息-->
+                <directory>src/main/resources</directory>
+            </resource>
             <resource>
                 <directory>src/main/resources-dev</directory>
             </resource>

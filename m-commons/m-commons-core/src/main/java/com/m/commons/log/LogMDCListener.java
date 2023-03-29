@@ -37,6 +37,9 @@ public class LogMDCListener implements GenericApplicationListener {
 
     @Override
     public void onApplicationEvent(ApplicationEvent applicationEvent) {
+
+
+
         ApplicationEnvironmentPreparedEvent evet = (ApplicationEnvironmentPreparedEvent) applicationEvent;
         //获取当前环境参数
         ConfigurableEnvironment environment = evet.getEnvironment();

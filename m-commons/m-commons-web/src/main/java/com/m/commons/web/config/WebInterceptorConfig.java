@@ -17,7 +17,7 @@ public class WebInterceptorConfig implements WebMvcConfigurer {
      * 取出spring容器中所有的拦截器类型进行注册,预先注册管理
      * eg: 一般所有自定义拦截起 都继承HandlerInterceptorAdapter
      * */
-    @Autowired
+    @Autowired(required = false)
     private List<HandlerInterceptorAdapter> interceptorAdapterList;
 
     /**

@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>m-business-student</module>
+        <module>m-business-class</module>
     </modules>
 
     <properties>

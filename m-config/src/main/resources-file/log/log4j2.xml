@@ -225,7 +225,11 @@
         <!--指定日志信息输出到控制台
             additivity：关闭日志输出的继承
         -->
-        <Logger name="com.m" level="${LOG_LEVEL}" additivity="false">
+        <Logger name="com.m" level="debug" additivity="false">
+            <appender-ref ref="Console"/>
+        </Logger>
+
+        <Logger name="com.alibaba" level="info" additivity="false">
             <appender-ref ref="Console"/>
         </Logger>
 

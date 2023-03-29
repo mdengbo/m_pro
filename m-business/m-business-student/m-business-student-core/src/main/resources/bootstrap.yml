@@ -1,0 +1,24 @@
+#bootstrap 会优于 application.yml 加载，且application.yml 会覆盖掉bootstrap.yml 配置信息
+#nacos 拉取远程配置时 鉴于 bootstrap 之后， application之前
+#nacos 远程配置文件更改后，会触发整个工程的配置文件重新加载,但不会触发 application.yml 加载，解决方案
+# 1、application.yml 文件配置信息放于 bootstrap.yml 内
+
+#nacos 该配置于远程配置文件后加载
+server:
+  port: 8100
+spring:
+  application:
+    name: m-student #微服务名称
+  profiles:
+    #指定配置文件环境信息 dev test pro 同pom 配置一起使用
+    active: '@runtime-profile@'
+  cloud:
+    nacos:
+      #配置注册中心及配置中心的 nacos 地址
+      server-addr: '@config-address@'
+      config:
+        file-extension: yaml
+        shared-configs: #配置自定义文件管理
+          - dataId: myserver.yaml #默认配置 dataId 为 ${spring.application.name}-${spring.application.profile}.yaml 格式
+            refresh: true
+

@@ -1,8 +1,1 @@
-server:
-  port: 8100
-spring:
-  application:
-    name: m-student
-  profiles:
-    #指定配置文件环境信息 dev test pro 同pom 配置一起使用
-    active: '@runtime-profile@'
+# nacos 远程文件发生变更时会触发配置信息的更改，但不会再拉取该配置文件，因此此文件内的配置信息都放于 bootstrap.yml

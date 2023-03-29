@@ -1,9 +1,11 @@
 package com.m.commons.web.apiversion;
 
+import org.springframework.core.annotation.AnnotationUtils;
 import org.springframework.web.servlet.mvc.condition.RequestCondition;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
 
 import java.lang.reflect.Method;
+import java.util.Objects;
 
 /**
  * 多版本处理器
@@ -20,7 +22,17 @@ public class ApiVersionHandlerMapping extends RequestMappingHandlerMapping {
     * */
     @Override
     protected RequestCondition<?> getCustomTypeCondition(Class<?> handlerType) {
-        return super.getCustomTypeCondition(handlerType);
+
+        //获取版本信息
+        ApiVersion apiVersion = AnnotationUtils.getAnnotation(handlerType, ApiVersion.class);
+
+        if(Objects.isNull(apiVersion)) {
+            return new ApiVersionRequestCondition(1.0, PlatFormTypeEnum.ALL);
+        }
+
+        //将注解上的版本号信息设置到条件对象
+        //当版本号信息为空时  设置默认版本号信息
+        return new ApiVersionRequestCondition(apiVersion.value(), apiVersion.srcType());
     }
 
     /**
@@ -30,6 +42,21 @@ public class ApiVersionHandlerMapping extends RequestMappingHandlerMapping {
      * */
     @Override
     protected RequestCondition<?> getCustomMethodCondition(Method method) {
-        return super.getCustomMethodCondition(method);
+
+        //获取版本信息
+        ApiVersion apiVersion = AnnotationUtils.getAnnotation(method, ApiVersion.class);
+
+        //若方法上的版本号信息为空 再尝试获取类上的版本信息
+        if (null == apiVersion) {
+            //获取类上版本
+            apiVersion = AnnotationUtils.getAnnotation(method.getDeclaringClass(), ApiVersion.class);
+        }
+        //将注解上的版本号信息设置到条件对象
+        //当版本号信息为空时  设置默认版本号信息
+        if (Objects.isNull(apiVersion)) {
+            return new ApiVersionRequestCondition(1.0, PlatFormTypeEnum.ALL);
+        }
+
+        return new ApiVersionRequestCondition(apiVersion.value(), apiVersion.srcType());
     }
 }

@@ -1,7 +1,8 @@
 #dev
 spring:
   profiles:
-    include:
+    include: #加载的文件将会覆盖 本文件中同名的值
       - db
       - log
       - jackson
+      - nacos

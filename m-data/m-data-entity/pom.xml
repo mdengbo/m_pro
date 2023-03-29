@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>m-data-entity-student</module>
+        <module>m-data-entity-class</module>
     </modules>
 
     <properties>

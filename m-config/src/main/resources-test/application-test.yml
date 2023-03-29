@@ -5,4 +5,5 @@ spring:
       - db-test
       - log
       - jackson
+      - nacos
       - #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

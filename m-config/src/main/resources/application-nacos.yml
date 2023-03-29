@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        heart-beat-interval: 30000 #微服务给 nacos 发送心跳频率时间 默认：5s
+        heart-beat-timeout: 60000  #心跳超时时间，服务器单位时间内未接收到客户端的心跳，会标记该客户端下线
+        ip-delete-timeout: 120000 #配置微服务被踢出的超时时长，单位时间内未收到响应，删除该服务
