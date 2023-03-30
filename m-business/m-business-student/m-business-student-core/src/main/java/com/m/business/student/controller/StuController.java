@@ -40,6 +40,28 @@ public class StuController {
     private StudentService studentService;
 
 
+    @RequestMapping("/getById")
+    @ApiVersion(1.0)
+    public R getById(Integer sId) {
+
+        Student stu = studentService.getById(sId);
+        //feign 服务调用  查询班级信息
+        System.out.println("stu getById 1.0");
+
+        return RUtils.succ(stu);
+    }
+
+    @RequestMapping("/getById")
+    @ApiVersion(2.0)
+    public R getById2(Integer sId) {
+
+        Student stu = studentService.getById(sId);
+        //feign 服务调用  查询班级信息
+        System.out.println("stu getById 2.0");
+
+        return RUtils.succ(stu);
+    }
+
     @RequestMapping("/test")
     public R test() {
         //手动设置page

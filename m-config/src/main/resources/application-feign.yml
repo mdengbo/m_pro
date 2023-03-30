@@ -1,0 +1,25 @@
+#feign 设置
+feign:
+  okhttp: # okHttp 依賴類：FeignAutoConfiguration
+    enabled: true #添加依赖 feign-okhttp
+  httpclient:
+    enabled: false #移除自带的httpclient
+  hystrix:
+    enabled: false
+  paramsName:  #自定义feign拦截属性， 由拦截器处理： FeignParamInterceptor
+    - api-version #版本号
+    - plat-form #请求数据源数据
+  client:
+    config:
+      #设置默认超时
+      default:
+        #连接超时
+        connectionTimeout: 10000
+        #读超时
+        readTimeout: 20000
+      #配置特定服务的超时时间
+      m-classes: #服务名
+        #连接超时
+        connectionTimeout: 10000
+        #读超时
+        readTimeout: 10000

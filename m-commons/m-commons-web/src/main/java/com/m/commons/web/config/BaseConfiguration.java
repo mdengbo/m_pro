@@ -1,8 +1,12 @@
 package com.m.commons.web.config;
 
 import com.m.commons.web.exception.GlobalException;
+import com.m.commons.web.feign.FeignParamInterceptor;
+import com.m.commons.web.feign.FeignParamsProperties;
 import com.m.commons.web.utils.ApplicationUtils;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -77,4 +81,13 @@ public class BaseConfiguration {
     }
 
 
+    /**
+     * feign 依赖配置
+     * */
+    @Configuration
+    @EnableConfigurationProperties(FeignParamsProperties.class) //自定义参数信息
+    @EnableFeignClients(basePackages = "com.m.business.feign", defaultConfiguration = FeignParamInterceptor.class) //feign 接口位置  defaultConfiguration:  feign 拦截器管理
+    public static class feignConfiguration {
+
+    }
 }

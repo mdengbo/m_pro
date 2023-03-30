@@ -27,6 +27,11 @@
             <artifactId>m-data-mapper-student</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>m-business-class-feign</artifactId>
+        </dependency>
+
     </dependencies>
 
 </project>

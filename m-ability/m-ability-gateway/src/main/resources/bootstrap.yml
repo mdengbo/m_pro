@@ -5,10 +5,10 @@
 
 #nacos 该配置于远程配置文件后加载
 server:
-  port: 8100
+  port: 8300 #http 默认80， https 443
 spring:
   application:
-    name: m-student #微服务名称
+    name: m-gateway #微服务名称
   profiles:
     #指定配置文件环境信息 dev test pro 同pom 配置一起使用
     active: '@runtime-profile@'
@@ -17,12 +17,15 @@ spring:
       #配置注册中心及配置中心的 nacos 地址
       server-addr: '@config-address@'
       config:
-        file-extension: yaml
-        shared-configs: #配置自定义文件管理
-          - dataId: myserver.yaml #默认配置 dataId 为 ${spring.application.name}-${spring.application.profile}.yaml 格式
-            refresh: true
-  jackson:
-    default-property-inclusion:
-
-
-
+        shared-configs:
+          #动态加载路由规则
+          - dataId: gateway-routes.yaml #指定配置文件信息 默认加载 ${spring.application.name}-${spring.profiles.active}.yaml文件
+            refresh: true #开启实时刷新
+    gateway:
+      routes:
+        - uri: lb://m-student #lb 表示 loadbalance 负载均衡
+          predicates: #前缀
+            - Path=/stu/** #表示请求前缀为 /stu 过来的请求都转发到 lb://m-student 处理
+        - uri: lb://m-classes #lb 表示 loadbalance 负载均衡
+          predicates:
+            - Path=/class/**

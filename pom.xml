@@ -144,6 +144,12 @@
                 <artifactId>m-business-class-protocol</artifactId>
                 <version>${basic.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>org.example</groupId>
+                <artifactId>m-business-class-feign</artifactId>
+                <version>${basic.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

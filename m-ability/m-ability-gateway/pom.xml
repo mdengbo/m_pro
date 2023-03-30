@@ -3,18 +3,13 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>m-pro</artifactId>
+        <artifactId>m-ability</artifactId>
         <groupId>org.example</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>m-business</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>m-business-student</module>
-        <module>m-business-class</module>
-    </modules>
+    <artifactId>m-ability-gateway</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -62,19 +57,12 @@
 
         <dependency>
             <groupId>org.example</groupId>
-            <artifactId>m-commons-web</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.example</groupId>
             <artifactId>m-commons-core</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.example</groupId>
             <artifactId>m-config</artifactId>
         </dependency>
-
     </dependencies>
 
 </project>

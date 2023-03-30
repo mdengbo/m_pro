@@ -1,6 +1,7 @@
 package com.m.business.classes.controller;
 
 import com.m.business.classes.service.ClassesService;
+import com.m.commons.web.apiversion.ApiVersion;
 import com.m.data.entity.Classes;
 import com.m.data.r.R;
 import com.m.data.r.RUtils;
@@ -28,8 +29,18 @@ public class ClsController {
     private ClassesService classesService;
 
     @RequestMapping("/getById")
+    @ApiVersion(1.0)
     public R getClsByCid(@NotNull Integer cId) {
         Classes one = classesService.getById(cId);
+        System.out.println("class getById 1.0");
+        return RUtils.succ(one);
+    }
+
+    @RequestMapping("/getById")
+    @ApiVersion(2.0)
+    public R getClsByCid2(@NotNull Integer cId) {
+        Classes one = classesService.getById(cId);
+        System.out.println("class getById 2.0");
         return RUtils.succ(one);
     }
 

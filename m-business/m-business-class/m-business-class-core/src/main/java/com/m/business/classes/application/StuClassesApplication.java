@@ -1,5 +1,6 @@
 package com.m.business.classes.application;
 
+import com.m.commons.web.apiversion.register.EnableApiVersion;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -10,6 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Version 1.0
  */
 @SpringBootApplication
+@EnableApiVersion
 public class StuClassesApplication {
 
     public static void main(String[] args) {

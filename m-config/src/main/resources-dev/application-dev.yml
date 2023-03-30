@@ -6,3 +6,4 @@ spring:
       - log
       - jackson
       - nacos
+      - feign
