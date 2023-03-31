@@ -12,8 +12,7 @@
     <artifactId>m-data</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>m-data-entity</module>
-        <module>m-data-mapper</module>
+        <module>m-data-biz</module>
         <module>m-data-base</module>
     </modules>
 

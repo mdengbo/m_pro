@@ -9,11 +9,11 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>m-data-mapper</artifactId>
+    <artifactId>m-data-entity</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>m-data-mapper-student</module>
-        <module>m-data-mapper-class</module>
+        <module>m-data-biz-student</module>
+        <module>m-data-biz-class</module>
     </modules>
 
     <properties>
@@ -23,9 +23,22 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-annotation</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>m-data-base</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.example</groupId>
             <artifactId>m-commons-mysql</artifactId>
         </dependency>
+
     </dependencies>
 
 </project>
