@@ -1,8 +1,7 @@
 package com.m.data.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.m.data.domain.StudentVo;
-import com.m.data.entity.Student;
+import com.m.data.entity.Classes;
 
 /**
  * 学生表(Student)表数据库访问层
@@ -10,9 +9,7 @@ import com.m.data.entity.Student;
  * @author makejava
  * @since 2023-03-22 10:12:40
  */
-public interface StudentDao extends BaseMapper<Student> {
-
-    public StudentVo getBYPk(String id);
+public interface ClassesDao extends BaseMapper<Classes> {
 
 }
 

@@ -1,6 +1,7 @@
 package com.m.business.student.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.m.data.domain.StudentVo;
 import com.m.data.entity.Student;
 
 /**
@@ -10,6 +11,8 @@ import com.m.data.entity.Student;
  * @since 2023-03-22 10:12:44
  */
 public interface StudentService extends IService<Student> {
+
+    public StudentVo getStuInfo(String id);
 
 }
 

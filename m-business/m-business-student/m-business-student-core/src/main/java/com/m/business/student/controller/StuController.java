@@ -4,6 +4,7 @@ import com.m.business.student.input.StudentInput;
 import com.m.business.student.service.StudentService;
 import com.m.commons.web.apiversion.ApiVersion;
 import com.m.commons.web.apiversion.PlatFormTypeEnum;
+import com.m.data.domain.StudentVo;
 import com.m.data.entity.Student;
 import com.m.data.r.R;
 import com.m.data.r.RUtils;
@@ -130,5 +131,14 @@ public class StuController {
         studentService.save(saveDo);
 
         return RUtils.succ();
+    }
+
+    @RequestMapping("/test/stuById")
+    public R getStu(String id) {
+
+        StudentVo stuInfo = studentService.getStuInfo(id);
+        log.info("[stu getByPk] 学生info:{}", stuInfo);
+
+        return RUtils.succ(stuInfo);
     }
 }

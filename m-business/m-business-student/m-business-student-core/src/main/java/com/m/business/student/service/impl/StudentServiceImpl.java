@@ -3,6 +3,7 @@ package com.m.business.student.service.impl;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.m.business.feign.classes.ClsFeign;
 import com.m.business.student.service.StudentService;
+import com.m.data.domain.StudentVo;
 import com.m.data.entity.Classes;
 import com.m.data.entity.Student;
 import com.m.data.mapper.StudentDao;
@@ -26,6 +27,9 @@ public class StudentServiceImpl extends ServiceImpl<StudentDao, Student> impleme
     @Autowired
     private ClsFeign clsFeign;
 
+    @Autowired
+    StudentDao studentDao;
+
     @Override
     public Student getById(Serializable id) {
 
@@ -38,5 +42,10 @@ public class StudentServiceImpl extends ServiceImpl<StudentDao, Student> impleme
 
         return super.getById(id);
     }
+
+    public StudentVo getStuInfo(String id) {
+        return studentDao.getBYPk(id);
+    }
+
 }
 
