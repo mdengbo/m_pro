@@ -24,7 +24,7 @@
 
         <dependency>
             <groupId>org.example</groupId>
-            <artifactId>m-data-entity-class</artifactId>
+            <artifactId>m-data-biz-class</artifactId>
         </dependency>
     </dependencies>
 
