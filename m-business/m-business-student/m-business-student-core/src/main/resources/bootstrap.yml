@@ -2,6 +2,7 @@
 #nacos 拉取远程配置时 鉴于 bootstrap 之后， application之前
 #nacos 远程配置文件更改后，会触发整个工程的配置文件重新加载,但不会触发 application.yml 加载，解决方案
 # 1、application.yml 文件配置信息放于 bootstrap.yml 内
+# bootstrap.yml > application.yml > application-dev.yml > order-service.yaml
 
 #nacos 该配置于远程配置文件后加载
 server:
@@ -23,6 +24,10 @@ spring:
             refresh: true
   jackson:
     default-property-inclusion:
+my:
+  prop:
+    redis:
+      enable: true
 
 
 

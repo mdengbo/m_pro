@@ -52,7 +52,7 @@ public class StuController {
         return RUtils.succ(stu);
     }
 
-    @RequestMapping("/getById")
+    @RequestMapping("/getById2")
     @ApiVersion(2.0)
     public R getById2(Integer sId) {
 
@@ -71,7 +71,7 @@ public class StuController {
     }
 
 
-    @RequestMapping("/list")
+    @RequestMapping("/list0")
     @ApiVersion(1.0)
     public R list0() {
         //手动设置page
@@ -91,7 +91,7 @@ public class StuController {
         return RUtils.succ("1.0 ANDROID");
     }
 
-    @RequestMapping("/list")
+    @RequestMapping("/list1")
     @ApiVersion(value = 1.0, srcType = PlatFormTypeEnum.IOS)
     public R list4() {
         //手动设置page
@@ -100,7 +100,7 @@ public class StuController {
         return RUtils.succ("1.0 ISO");
     }
 
-    @RequestMapping("/list")
+    @RequestMapping("/list2")
     @ApiVersion(value = 2.0)
     public R list2() {
         //手动设置page

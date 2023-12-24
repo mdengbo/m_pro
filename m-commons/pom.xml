@@ -15,6 +15,9 @@
         <module>m-commons-core</module>
         <module>m-commons-web</module>
         <module>m-commons-mysql</module>
+        <module>m-commons-redis</module>
+        <module>m-commons-mq</module>
+        <module>m-commons-kafka</module>
     </modules>
 
     <properties>
@@ -27,6 +30,13 @@
             <groupId>org.example</groupId>
             <artifactId>m-data-base</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional> <!--不传递依赖，即当其他模块引入此模块时，该包不引入-->
+        </dependency>
+
     </dependencies>
 
 </project>

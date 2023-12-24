@@ -1,0 +1,20 @@
+###
+    nacos:
+    bash startup.sh -m standalone
+
+    zk 启动：
+    zkServer.sh start
+    zkServer.sh status
+    kafka 启动：
+    192.168.56.101 $KAFKA/bin/kafka-server-start.sh -daemon $KAFAK/config/server.properties
+
+    创建主题：
+    kafka-topics.sh --create --bootstrap-server zk101:9092,zk104:9092,zk103:9092 --replication-factor 2 --partitions 2 --topic Upstream_C2S_Topic
+    查看主题：
+    kafka-topics.sh --list --bootstrap-server zk101:9092,zk104:9092,zk103:9092
+    创建消费者：
+    kafka-console-consumer.sh --bootstrap-server zk101:9092,zk104:9092,zk103:9092 --topic Upstream_C2S_Topic --from-beginning
+    创建先费者组
+    kafka-console-consumer.sh --bootstrap-server zk101:9092,zk104:9092,zk103:9092 --topic Upstream_C2S_Topic --from-beginning -consumer-property group.id=group_c2s
+    tip：
+        --from-beginning

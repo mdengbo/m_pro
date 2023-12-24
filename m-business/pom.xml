@@ -14,6 +14,7 @@
     <modules>
         <module>m-business-student</module>
         <module>m-business-class</module>
+        <module>m-business-msg</module>
     </modules>
 
     <properties>
@@ -73,6 +74,11 @@
         <dependency>
             <groupId>org.example</groupId>
             <artifactId>m-config</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
         </dependency>
 
     </dependencies>

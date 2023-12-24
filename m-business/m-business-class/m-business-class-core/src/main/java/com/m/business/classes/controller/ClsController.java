@@ -1,5 +1,9 @@
 package com.m.business.classes.controller;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.extension.conditions.query.LambdaQueryChainWrapper;
+import com.google.common.base.Function;
+import com.google.common.base.Supplier;
 import com.m.business.classes.service.ClassesService;
 import com.m.commons.web.apiversion.ApiVersion;
 import com.m.data.entity.Classes;
@@ -31,6 +35,9 @@ public class ClsController {
     @RequestMapping("/getById")
     @ApiVersion(1.0)
     public R getClsByCid(@NotNull Integer cId) {
+        LambdaQueryWrapper<Classes> wrapper  = new LambdaQueryWrapper<>();
+        final Supplier<Classes> classesSupplier = Classes::new;
+        wrapper.eq(Classes::getClassName, "1");
         Classes one = classesService.getById(cId);
         System.out.println("class getById 1.0");
         return RUtils.succ(one);
@@ -43,5 +50,13 @@ public class ClsController {
         System.out.println("class getById 2.0");
         return RUtils.succ(one);
     }
+
+    public static void main(String[] args) {
+        new b();
+        System.out.println("========");
+        new b();
+
+    }
+
 
 }

@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>m-data-entity</artifactId>
+    <artifactId>m-data-biz</artifactId>
     <packaging>pom</packaging>
     <modules>
         <module>m-data-biz-student</module>
@@ -37,6 +37,10 @@
         <dependency>
             <groupId>org.example</groupId>
             <artifactId>m-commons-mysql</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>m-commons-redis</artifactId>
         </dependency>
 
     </dependencies>

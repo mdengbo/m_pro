@@ -12,9 +12,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 @SpringBootApplication
 @EnableApiVersion
-public class StuClassesApplication {
+public class ClassesApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(StuClassesApplication.class, args);
+        SpringApplication.run(ClassesApplication.class, args);
     }
 }
